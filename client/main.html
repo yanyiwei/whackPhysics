@@ -22,20 +22,28 @@
 
 <template name="topics">
 
-    {{#if isMomentum}}
+    <!-- {{#if isMomentum}}
       {{> momentum}}
-    {{else}}
+    {{else}} -->
     <h1>Welcome to Hack Physics!</h1>
-    <button class="btn btn-primary momentum_anim">momentum</button>
+    <!-- <button class="btn btn-primary momentum_anim">momentum</button>
     <button class="btn btn-success force_anim">force</button>
-    <button class="btn btn-info workEnergy_anim">work energy</button>
-    <a type="button" class="btn btn-success" href="/force">Force</a>
-    {{/if}}
+    <button class="btn btn-info workEnergy_anim">work energy</button> -->
+    <a type="button" class="btn btn-primary" href="/force">Force</a>
+    <a type="button" class="btn btn-success" href="/momentum">Momentum</a>
+    <a type="button" class="btn btn-info" href="/workEnergy">Work Energy</a>
+    <!-- {{/if}} -->
 </template>
 
 <template name="force">
   <div class="container">
     <h1>Force</h1>
+  </div>
+</template>
+
+<template name="workEnergy">
+  <div class="container">
+    <h1>Work Energy</h1>
   </div>
 </template>
 

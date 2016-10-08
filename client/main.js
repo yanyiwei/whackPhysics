@@ -20,6 +20,15 @@ Router.route('/force', function () {
   // this.render('momentum');
 });
 
+Router.route('/momentum', function () {
+  this.render('momentum');
+  // this.render('momentum');
+});
+
+Router.route('/workEnergy', function () {
+  this.render('workEnergy');
+  // this.render('momentum');
+});
 
 
 
@@ -31,9 +40,9 @@ Router.route('/force', function () {
 //   });
 // });
 
-Session.set({
-  isMoment: false,
-});
+// Session.set({
+//   isMoment: false,
+// });
 
 
 Template.topics.onCreated(function helloOnCreated() {
@@ -42,9 +51,9 @@ Template.topics.onCreated(function helloOnCreated() {
 });
 
 Template.topics.helpers({
-  isMomentum: function () {
-      return Session.get("isMoment");
-  },
+  // isMomentum: function () {
+  //     return Session.get("isMoment");
+  // },
 });
 
 Template.topics.events({
@@ -52,21 +61,21 @@ Template.topics.events({
   //   // increment the counter when button is clicked
   //   instance.counter.set(instance.counter.get() + 1);
   // },
-  'click .workEnergy_anim':function(event){
-    Session.set({
-      isMoment: true,
-    });
-},
-  'click .momentum':function(event){
-    Session.set({
-      isMoment: true,
-    });
-},
-  'click .force':function(event){
-    rSession.set({
-      isMoment: true,
-    });
-},
+//   'click .workEnergy_anim':function(event){
+//     Session.set({
+//       isMoment: true,
+//     });
+// },
+//   'click .momentum':function(event){
+//     Session.set({
+//       isMoment: true,
+//     });
+// },
+//   'click .force':function(event){
+//     rSession.set({
+//       isMoment: true,
+//     });
+// },
 
 
 });
