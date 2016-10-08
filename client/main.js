@@ -91,3 +91,35 @@ Template.force.rendered = function() {
         ctx.fillRect (30, 30, 50, 50);
       }
 }
+
+var pos = 10
+var bullet = new Image()
+bullet.src = 'http://www.clipartbest.com/cliparts/bcy/ozx/bcyozxAqi.png'
+
+var box = new Image()
+box.src = 'http://tutorial9.s3.amazonaws.com/uploads/2009/11/3d-wooden-box/final.png'
+box_x_pos = 700
+
+var width = 800;
+
+function draw(){
+  var ctx = document.getElementById('momentum_draw').getContext('2d');
+  ctx.drawImage(box, box_x_pos, 50, 60, 60)
+  ctx.drawImage(bullet, pos, 50, 60, 30);
+  if (pos < box_x_pos-55) {
+    pos = pos+2;
+  }
+   
+  
+}
+
+Template.momentum.rendered = function() {
+  var canvas = document.getElementById('momentum_draw');
+      if (canvas.getContext){
+        var ctx = canvas.getContext('2d');
+        timer=setInterval(draw, 10);
+        //window.requestAnimationFrame(draw);
+
+       
+      }
+}
