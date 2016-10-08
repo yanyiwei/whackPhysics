@@ -40,9 +40,13 @@ Router.route('/workEnergy', function () {
 //   });
 // });
 
-// Session.set({
-//   isMoment: false,
-// });
+Session.set({
+  timeMoment: 5,
+});
+
+Session.set({
+  massMoment: 5,
+});
 
 
 Template.topics.onCreated(function helloOnCreated() {
@@ -116,8 +120,8 @@ function draw(){
   if (pos < box_x_pos-55) {
     pos = pos+2;
   }
-   
-  
+
+
 }
 
 Template.momentum.rendered = function() {
@@ -127,6 +131,52 @@ Template.momentum.rendered = function() {
         timer=setInterval(draw, 10);
         //window.requestAnimationFrame(draw);
 
-       
+
       }
 }
+
+Template.momentum.events({
+  "input #time_slider": function(event) {
+      // var res = event.target.id.split('-');
+      var time = document.getElementById("time_slider").value;
+      Session.set({
+        timeMoment: time,
+      });
+     // document.getElementById("time-edition-submitted").innerText = "";
+  },
+  "input #time_input": function(event) {
+      // var res = event.target.id.split('-');
+      var time = document.getElementById("time_input").value;
+      Session.set({
+        timeMoment: time,
+      });
+     // document.getElementById("time-edition-submitted").innerText = "";
+  },
+  "input #mass_slider": function(event) {
+      // var res = event.target.id.split('-');
+      var mass = document.getElementById("mass_slider").value;
+      Session.set({
+        massMoment: mass,
+      });
+     // document.getElementById("time-edition-submitted").innerText = "";
+  },
+  "input #mass_input": function(event) {
+      // var res = event.target.id.split('-');
+      var mass = document.getElementById("mass_input").value;
+      Session.set({
+        massMoment: mass,
+      });
+     // document.getElementById("time-edition-submitted").innerText = "";
+  },
+})
+
+Template.momentum.helpers({
+  time: function() {
+    var time = Session.get("timeMoment");
+    return time;
+  },
+  mass: function() {
+    var mass = Session.get("massMoment");
+    return mass;
+  }
+});

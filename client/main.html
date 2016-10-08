@@ -51,7 +51,21 @@
 <template name="momentum">
   <div class="container">
     <h1>Momentum</h1>
-    <canvas id="momentum_draw" width="800" height="600"></canvas>
-    
+    <div class="row">
+      <div class="col-sm-8 col-md-8">
+        <h2>Animation</h2>
+        <canvas id="momentum_draw" width="800" height="600"></canvas>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <h2>Make Some Changes!</h2>
+        Time: <input id="time_input" type="number" name="time" value="{{time}}"/>
+        <input id="time_slider" type="range" step="0.05" value="{{time}}"/>
+        <br>
+        Mass: <input id="mass_input" type="number" name="mass" value="{{mass}}"/>
+        <input id="mass_slider" type="range" step="0.05" value="{{mass}}"/>
+
+      </div>
+    </div>
+
   </div>
 </template>
