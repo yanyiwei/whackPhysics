@@ -105,7 +105,14 @@ var width = 800;
 function draw(){
   var ctx = document.getElementById('momentum_draw').getContext('2d');
   ctx.drawImage(box, box_x_pos, 50, 60, 60)
+
+
+  ctx.clearRect(pos-60,50,60,30);
+
+
   ctx.drawImage(bullet, pos, 50, 60, 30);
+  //ctx.clearRect(pos,50,60,30);
+
   if (pos < box_x_pos-55) {
     pos = pos+2;
   }
