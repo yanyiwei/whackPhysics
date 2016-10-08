@@ -1,0 +1,57 @@
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>hackPhysics</title>
+</head>
+
+<body>
+
+  <!-- {{> topics}} -->
+</body>
+
+<!-- <template name="ApplicationLayout">
+  {{> yield "topics"}}
+
+</template> -->
+
+<template name="topics">
+
+    {{#if isMomentum}}
+      {{> momentum}}
+    {{else}}
+    <h1>Welcome to Hack Physics!</h1>
+    <button class="btn btn-primary momentum_anim">momentum</button>
+    <button class="btn btn-success force_anim">force</button>
+    <button class="btn btn-info workEnergy_anim">work energy</button>
+    <a type="button" class="btn btn-success" href="/force">Force</a>
+    {{/if}}
+</template>
+
+<template name="force">
+  <div class="container">
+    <h1>Force</h1>
+  </div>
+</template>
+
+<template name="momentum">
+  <div class="container">
+    <h1>Momentum</h1>
+    <img src="http://www.clipartbest.com/cliparts/bcy/ozx/bcyozxAqi.png" alt="bullet" height="42" width="42">
+    <img src="http://tutorial9.s3.amazonaws.com/uploads/2009/11/3d-wooden-box/final.png" alt="bullet" height="42" width="42">
+  </div>
+</template>
+<!-- <template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template> -->
